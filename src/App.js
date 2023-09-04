@@ -10,14 +10,18 @@ import NotFound from "./screens/NotFound"
 function App() {
   return(
     <>
-      <Header/>
-      <Switch>
+
+    <Switch>
+    <Route path={'/'} exact={true} component={Home} />
+    </Switch>
+     
+      {/* <Switch>
         <Route path={'/'} exact={true} component={Home} />
         <Route path={'/detalle/id/:id'} component={Detalle} />
         <Route path={'/favoritos'} component={Favoritos} />
         <Route component={NotFound}/>
-      </Switch>
-      <Footer />
+      </Switch> */}
+     
     </>
   )
 }
