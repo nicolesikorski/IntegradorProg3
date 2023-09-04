@@ -5,7 +5,7 @@ import Detalle from "./screens/Detalle/index"
 import Home from "./screens/Home/index"
 import Favoritos from "./screens/Favoritos/index"
 import NotFound from "./screens/NotFound"
-
+import TodasPeliculas from "./screens/TodasPeliculas/index"
 
 function App() {
   return(
