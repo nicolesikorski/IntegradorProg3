@@ -3,7 +3,7 @@
 import { Component } from "react"
 import { Link } from "react-router-dom"
 
-class Ficha extends Component{
+class FichaPelicula extends Component{
     constructor(props){
         super(props)
         this.state={
@@ -61,4 +61,4 @@ class Ficha extends Component{
     }
 }
 
-export default Ficha
+export default FichaPelicula

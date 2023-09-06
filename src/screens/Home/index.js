@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import {options} from "../../utils/constants"
 import './styles.css'
-import Ficha from '../../components/FichaPelicula/FichaPelicula'
+import PeliculasContainer from '../../components/PeliculasContainer/PeliculasContainer'
+import SeriesContainer from '../../components/SeriesContainer/SeriesContainer'
 import { Link } from 'react-router-dom'
 
 class index extends Component {
@@ -44,27 +45,25 @@ class index extends Component {
     render() {
       return (
           <div>
-          
-          <section> 
-          <h2>Peliculas mas populares</h2>
+           <h2>Peliculas mas populares</h2>
 
-          <Link to="/TodasPeliculas">
-          <h2 >Ver todas</h2>
-          </Link>
-          
+<Link to="/TodasPeliculas">
+<h2 >Ver todas</h2>
+</Link>
+          <PeliculasContainer Pelicula= {this.state.Peliculas}>
 
-
-          {this.state.Peliculas.map((elm,idx)=> < Ficha key={elm + idx} data={elm} title={elm.title} poster_path = {elm.poster_path} overview = {elm.overview} /> )}
-    
-
-          </section>
+          </PeliculasContainer>
 
 
           <h2>Series mas populares</h2>
+          
           <Link to="/TodasSeries">
           <h2 >Ver todas</h2>
           </Link>
-          {this.state.Series.map((elm,idx)=> < Ficha key={elm + idx} data={elm} title={elm.title} poster_path = {elm.poster_path} overview = {elm.overview}   /> )}
+
+          <SeriesContainer Serie= {this.state.Series}>
+
+          </SeriesContainer>
           
         </div>
       )

@@ -7,7 +7,8 @@ class DetallePelicula extends Component {
     constructor(props){
         super(props)
         this.state = {
-            Detalle: null
+            Detalle: null,
+            esFavorito: false
           }
     }
 
@@ -19,16 +20,55 @@ class DetallePelicula extends Component {
         .then(data => this.setState({
             Detalle: data
         
-          } ) 
-        )
+          } , ()=> {
 
-        
-        .catch(err=> console.log(err))
-   
+            let storageFav =  localStorage.getItem('favoritos')
+            let arrParseado = JSON.parse(storageFav)
     
-        
+            if(arrParseado !== null){
+              let estaMiPelicula= arrParseado.includes(this.state.Detalle.id)
     
-     }
+              if(estaMiPelicula){
+                this.setState({
+                  esFavorito: true
+                })
+              }
+            }
+  
+          }))
+          .catch(err => console.log(err))
+  
+  
+      }
+
+      agregarAFavoritos(idPelicula){
+        let storageFav = localStorage.getItem('favoritos')
+        if(storageFav === null){
+          let arrIds = [idPelicula]
+          let arrStringificado = JSON.stringify(arrIds)
+          localStorage.setItem('favoritos', arrStringificado)
+        } else {
+          let arrParseado = JSON.parse(storageFav)
+          arrParseado.push(idPelicula)
+          let arrStringificado = JSON.stringify(arrParseado)
+          localStorage.setItem('favoritos', arrStringificado)
+        }
+  
+        this.setState({
+          esFavorito: true
+        })
+      }
+  
+      sacarDeFavoritos(idPelicula){
+        let storageFav = localStorage.getItem('favoritos')
+        let arrParseado = JSON.parse(storageFav)
+        let favsFiltrados = arrParseado.filter((id) => id !== idPelicula)
+        let arrStringificado = JSON.stringify(favsFiltrados)
+        localStorage.setItem('favoritos', arrStringificado)
+        this.setState({
+          esFavorito: false
+        })
+      }
 
     render(){
         return(
@@ -43,17 +83,28 @@ class DetallePelicula extends Component {
               <p className=""> Fecha de estreno: {this.state.Detalle.release_date}</p>
               <p className=""> Duracion: {this.state.Detalle.runtime}</p>
               <p className=""> Rating: {this.state.Detalle.vote_average}</p>
+
               <p className=""> Genero 1: {this.state.Detalle.genres[0].name }</p>
               <p className=""> Genero 2: {this.state.Detalle.genres[1].name }</p>
               <p className=""> Genero 3: {this.state.Detalle.genres[1].name }</p>
               
+              {
+              this.state.esFavorito ?
+              <button onClick={()=> this.sacarDeFavoritos(this.state.Detalle.id)}>
+                Sacar de favoritos
+              </button>  
+              :
+              <button onClick={()=> this.agregarAFavoritos(this.state.Detalle.id)}>
+                Agregar a favoritos
+              </button>
+            }
 
               
               
               
           </div>
           :
-          <h1>Trayendo Peliculas...</h1>
+          <h1>Cargando Pelicula...</h1>
         }
 
 
