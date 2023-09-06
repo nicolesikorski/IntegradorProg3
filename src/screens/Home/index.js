@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {options} from "../../utils/constants"
 import './styles.css'
-import Ficha from '../../components/Ficha/Ficha'
+import Ficha from '../../components/FichaPelicula/FichaPelicula'
 import { Link } from 'react-router-dom'
 
 class index extends Component {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {options} from "../../utils/constants"
-import Ficha from '../../components/Ficha/Ficha'
+import FichaPelicula from '../../components/FichaPelicula/FichaPelicula'
 
 class TodasPeliculas extends Component {
 
@@ -37,7 +37,7 @@ class TodasPeliculas extends Component {
           
           <section> 
           <h2>Todas las peliculas</h2>
-          {this.state.Peliculas.map((elm,idx)=> < Ficha key={elm + idx} data={elm} title={elm.title} poster_path = {elm.poster_path} overview = {elm.overview}  /> )}
+          {this.state.Peliculas.map((elm,idx)=> < FichaPelicula key={elm + idx} data={elm} title={elm.title} poster_path = {elm.poster_path} overview = {elm.overview} id = {elm.id} /> )}
           </section>
 
 

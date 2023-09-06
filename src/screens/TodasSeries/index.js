@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {options} from "../../utils/constants"
-import Ficha from '../../components/Ficha/Ficha'
+import Ficha from '../../components/FichaPelicula/FichaPelicula'
 
 class TodasSeries extends Component {
 
