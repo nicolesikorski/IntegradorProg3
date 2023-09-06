@@ -2,22 +2,22 @@ import React, { Component } from 'react'
 import {options} from "../../utils/constants"
 import Ficha from '../../components/Ficha/Ficha'
 
-class TodasPeliculas extends Component {
+class TodasSeries extends Component {
 
   constructor(props){
     super(props)
     this.state = {
-      Peliculas: []
+      Series: []
     }
   }
 
   componentDidMount() {
 
-    //Peliculas todas
-    fetch('https://api.themoviedb.org/3/discover/movie' , options)
+    //Series todas
+    fetch('https://api.themoviedb.org/3/discover/tv' , options)
     .then(resp => resp.json())
     .then(data => this.setState({
-      Peliculas: data.results
+      Series: data.results
   
     } )
     )
@@ -28,16 +28,13 @@ class TodasPeliculas extends Component {
 
  }
 
-
-
-
     render() {
       return (
           <div>
           
           <section> 
-          <h2>Todas las peliculas</h2>
-          {this.state.Peliculas.map((elm,idx)=> < Ficha key={elm + idx} data={elm} title={elm.title} poster_path = {elm.poster_path} overview = {elm.overview}  /> )}
+          <h2>Todas las series</h2>
+          {this.state.Series.map((elm,idx)=> < Ficha key={elm + idx} data={elm} title={elm.title} poster_path = {elm.poster_path} overview = {elm.overview} /> )}
           </section>
 
 
@@ -47,4 +44,4 @@ class TodasPeliculas extends Component {
     }
   }
 
-export default TodasPeliculas
+export default TodasSeries

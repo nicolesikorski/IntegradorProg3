@@ -3,7 +3,7 @@
 import { Component } from "react"
 import { Link } from "react-router-dom"
 
-class FichaPelicula extends Component{
+class Ficha extends Component{
     constructor(props){
         super(props)
         
@@ -17,8 +17,18 @@ class FichaPelicula extends Component{
               <h4 className="titulo">{this.props.title}</h4>
               <img className="" src = { `https://image.tmdb.org/t/p/w342/${this.props.poster_path} `} alt="" />
               <p className=""> Descripcion: {this.props.overview}</p>
-              <p className="">   Fecha de estreno: {this.props.release_date}</p>
-              <Link to ="/">  Ver todas </Link> 
+              <Link to="">
+              <h2 >Ver más</h2>
+              </Link>
+              /* <Link to={`/detalle/${this.props.id}`}>
+              <h2 >Ir al detalle</h2>
+              </Link> */
+              
+              
+
+              
+              
+              
               {
               
             }
@@ -27,4 +37,4 @@ class FichaPelicula extends Component{
     }
 }
 
-export default FichaPelicula
+export default Ficha

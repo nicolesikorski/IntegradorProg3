@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import {options} from "../../utils/constants"
 import './styles.css'
-import FichaPelicula from '../../components/FichaPelicula/FichaPelicula'
-import FichaSerie from '../../components/FichaSerie/FichaSerie'
+import Ficha from '../../components/Ficha/Ficha'
+import { Link } from 'react-router-dom'
+
 class index extends Component {
 
   constructor(props){
@@ -27,20 +28,15 @@ class index extends Component {
 
 
     //Series mas populares
-
     fetch('https://api.themoviedb.org/3/tv/popular' , options)
     .then(resp => resp.json())
     .then(data => this.setState({
       Series: data.results
-  
     } )
     )
     .catch(err=> console.log(err))
 
-
-
-    
-    }
+ }
 
 
 
@@ -48,19 +44,27 @@ class index extends Component {
     render() {
       return (
           <div>
-          <h1>My App in React</h1>
-
+          
           <section> 
           <h2>Peliculas mas populares</h2>
 
-          {this.state.Peliculas.map((elm,idx)=> < FichaPelicula key={elm + idx} data={elm} title={elm.title} poster_path = {elm.poster_path} overview = {elm.overview} release_date = {elm.release_date} /> )}
+          <Link to="/TodasPeliculas">
+          <h2 >Ver todas</h2>
+          </Link>
+          
+
+
+          {this.state.Peliculas.map((elm,idx)=> < Ficha key={elm + idx} data={elm} title={elm.title} poster_path = {elm.poster_path} overview = {elm.overview} /> )}
     
 
           </section>
 
 
           <h2>Series mas populares</h2>
-          {this.state.Series.map((elm,idx)=> < FichaSerie key={elm + idx} data={elm} title={elm.title} poster_path = {elm.poster_path} overview = {elm.overview}  release_date = {elm.release_date} /> )}
+          <Link to="/TodasSeries">
+          <h2 >Ver todas</h2>
+          </Link>
+          {this.state.Series.map((elm,idx)=> < Ficha key={elm + idx} data={elm} title={elm.title} poster_path = {elm.poster_path} overview = {elm.overview}   /> )}
           
         </div>
       )

@@ -6,6 +6,7 @@ import Home from "./screens/Home/index"
 import Favoritos from "./screens/Favoritos/index"
 import NotFound from "./screens/NotFound"
 import TodasPeliculas from "./screens/TodasPeliculas/index"
+import TodasSeries from "./screens/TodasSeries";
 
 function App() {
   return(
@@ -13,6 +14,9 @@ function App() {
 
     <Switch>
     <Route path={'/'} exact={true} component={Home} />
+    <Route path={'/TodasPeliculas'} exact={true} component={TodasPeliculas} />
+    <Route path={'/TodasSeries'} exact={true} component={TodasSeries} />
+    <Route path={'/detalle/:id'} component={Detalle} />
     </Switch>
      
       {/* <Switch>
