@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import FichaPelicula from "../FichaPelicula/FichaPelicula";
-
+import './styles.css'
 
 
 export default class PeliculasContainer extends Component {

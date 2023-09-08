@@ -1,24 +1,27 @@
 import { Switch, Route } from "react-router-dom";
-import Header from "./components/Header/Header"
-import Footer  from "./components/Footer/Footer";
 import Home from "./screens/Home/index"
 import Favoritos from "./screens/Favoritos/index"
 import NotFound from "./screens/NotFound"
-import TodasPeliculas from "./screens/TodasPopulares/index"
+import TodasUpcoming from "./screens/TodasUpcoming";
+import TodasPopulares from "./screens/TodasPopulares";
 import DetallePelicula  from "./screens/DetallePelicula/index";
+import Header from "./components/Header/Header";
 
 function App() {
   return(
     <>
-
+    <Header> </Header>
+<main>
     <Switch>
     <Route path={'/'} exact={true} component={Home} />
-    <Route path={'/TodasPeliculas'} exact={true} component={TodasPeliculas} />
+    <Route path={'/Populares'} exact={true} component={TodasPopulares} />
+    <Route path={'/Upcoming'} exact={true} component={TodasUpcoming} />
     <Route path={'/detalle/pelicula/:id'} component={DetallePelicula} />
     <Route path={'/favoritos'} component={Favoritos} />
     </Switch>
-     
-      
+    </main>
+    
+    
      
     </>
   )
