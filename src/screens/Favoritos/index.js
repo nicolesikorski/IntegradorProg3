@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import PeliculaContainer from '../../components/PeliculasContainer/PeliculasContainer'
+import PeliculasContainer from '../../components/PeliculasContainer/PeliculasContainer'
 
-class index extends Component {
-
+export default class index extends Component {
   constructor(props){
     super(props)
     this.state = {
@@ -34,14 +33,18 @@ class index extends Component {
   }
 
   render() {
+    
     return (
+
+      
       <div>
-        <h1>Favoritos: </h1>
-       
-        <PeliculaContainer actualizarState = {(id) => this.actualizarState(id)} Pelicula = {this.state.favoritos}       />
-      </div>
+      <h1> Favoritos: </h1>
+      <PeliculasContainer actualizarState = {(id) => this.actualizarState(id)} Pelicula = {this.state.favoritos}       />
+     
+      
+    </div>
+
+     
     )
   }
 }
-
-export default index

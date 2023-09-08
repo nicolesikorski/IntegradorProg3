@@ -31,6 +31,9 @@ class FichaPelicula extends Component{
          
               <h4 className="titulo">{this.props.title}</h4>
               <img className="" src = { `https://image.tmdb.org/t/p/w342/${this.props.poster_path} `} alt="" />
+              <Link to={`/detalle/pelicula/${this.props.id}`}>
+              <h2 >Ir al detalle</h2>
+              </Link> 
 
             {this.state.boton !== false?
             <section>
@@ -44,9 +47,7 @@ class FichaPelicula extends Component{
 
               
               
-              <Link to={`/detalle/pelicula/${this.props.id}`}>
-              <h2 >Ir al detalle</h2>
-              </Link> 
+              
               
               
 

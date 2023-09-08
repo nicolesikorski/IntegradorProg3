@@ -2,16 +2,20 @@ import React, { Component } from 'react'
 import {options} from "../../utils/constants"
 import './styles.css'
 import PeliculasContainer from '../../components/PeliculasContainer/PeliculasContainer'
-import SeriesContainer from '../../components/SeriesContainer/SeriesContainer'
 import { Link } from 'react-router-dom'
+import Form from '../../components/Form/Form'
 
 class index extends Component {
 
   constructor(props){
     super(props)
     this.state = {
-      Peliculas: [],
-      Series : []
+      Populares: [],
+      backupPop: [],
+      Upcoming : [],
+      backupUp: [],
+      page: 1
+         
     }
   }
 
@@ -21,49 +25,59 @@ class index extends Component {
     fetch('https://api.themoviedb.org/3/movie/popular' , options)
     .then(resp => resp.json())
     .then(data => this.setState({
-      Peliculas: data.results
+      Populares: data.results.slice(0,5),
+      backupPop: data.results.slice(0,5)
   
     } )
     )
     .catch(err=> console.log(err))
 
 
-    //Series mas populares
-    fetch('https://api.themoviedb.org/3/tv/popular' , options)
+    //Peliculas en cartel
+    fetch('https://api.themoviedb.org/3/movie/now_playing' , options)
     .then(resp => resp.json())
     .then(data => this.setState({
-      Series: data.results
+      Upcoming: data.results.slice(0,5),
+      backupUp: data.results.slice(0,5)
     } )
     )
     .catch(err=> console.log(err))
 
  }
 
+ filtrarPeliculas(nombre){
+    let popFiltrados = this.state.backupPop.filter((elm) => elm.title.toLowerCase().includes(nombre.toLowerCase()))
+    let UpFiltrados = this.state.backupUp.filter((elm) => elm.title.toLowerCase().includes(nombre.toLowerCase()))
+    this.setState({
+        Populares: popFiltrados , 
+        Upcoming: UpFiltrados
+    })
+}
 
-
+ 
 
     render() {
       return (
           <div>
+
+  <Form filtrarPeliculas = {(nombre) => this.filtrarPeliculas(nombre)}/>
+
            <h2>Peliculas mas populares</h2>
 
 <Link to="/TodasPeliculas">
 <h2 >Ver todas</h2>
 </Link>
-          <PeliculasContainer Pelicula= {this.state.Peliculas}>
+          <PeliculasContainer Pelicula= {this.state.Populares}>
 
           </PeliculasContainer>
 
 
-          <h2>Series mas populares</h2>
+          <h2>Peliculas en cartel</h2>
           
-          <Link to="/TodasSeries">
-          <h2 >Ver todas</h2>
-          </Link>
+        
+          <PeliculasContainer Pelicula= {this.state.Upcoming}>
 
-          <SeriesContainer Serie= {this.state.Series}>
-
-          </SeriesContainer>
+          </PeliculasContainer>
           
         </div>
       )

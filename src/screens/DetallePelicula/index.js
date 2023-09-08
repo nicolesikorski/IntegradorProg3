@@ -84,9 +84,8 @@ class DetallePelicula extends Component {
               <p className=""> Duracion: {this.state.Detalle.runtime}</p>
               <p className=""> Rating: {this.state.Detalle.vote_average}</p>
 
-              <p className=""> Genero 1: {this.state.Detalle.genres[0].name }</p>
-              <p className=""> Genero 2: {this.state.Detalle.genres[1].name }</p>
-              <p className=""> Genero 3: {this.state.Detalle.genres[1].name }</p>
+              {/* <p className=""> Genero 1: {this.state.Detalle.genres[0].name }</p> */}
+             
               
               {
               this.state.esFavorito ?
