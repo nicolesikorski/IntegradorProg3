@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {options} from "../../utils/constants"
 import PeliculasContainer from '../../components/PeliculasContainer/PeliculasContainer'
-import Form from '../../components/Form/Form'
+import FormFiltro from '../../components/FormFiltro/FormFiltro'
 
 class TodasPopulares extends Component {
 
@@ -57,7 +57,7 @@ filtrarPeliculas(nombre){
           
           <section> 
           <h2>Todas las populares</h2>
-          <Form filtrarPeliculas = {(nombre) => this.filtrarPeliculas(nombre)}/>
+          <FormFiltro filtrarPeliculas = {(nombre) => this.filtrarPeliculas(nombre)}/>
             <button onClick={()=> this.traerMasPeliculas()}>Traer más películas</button>
           <PeliculasContainer Pelicula= {this.state.Populares}>
 

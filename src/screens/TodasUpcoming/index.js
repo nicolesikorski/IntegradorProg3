@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {options} from "../../utils/constants"
 import PeliculasContainer from '../../components/PeliculasContainer/PeliculasContainer'
-import Form from '../../components/Form/Form'
+import FormFiltro from '../../components/FormFiltro/FormFiltro'
 
 class TodasUpcoming extends Component {
 
@@ -16,8 +16,8 @@ class TodasUpcoming extends Component {
 
   componentDidMount() {
 
-    //Peliculas populares todas
-    fetch('https://api.themoviedb.org/3/movie/popular' , options)
+    //Peliculas upcoming todas
+    fetch('https://api.themoviedb.org/3/movie/now_playing' , options)
     .then(resp => resp.json())
     .then(data => this.setState({
         Upcoming: data.results,
@@ -56,9 +56,11 @@ filtrarPeliculas(nombre){
           <div>
           
           <section> 
-          <h2>Todas las populares</h2>
-          <Form filtrarPeliculas = {(nombre) => this.filtrarPeliculas(nombre)}/>
+          <h2>Todas las peliculas en cartel</h2>
+          
+          <FormFiltro filtrarPeliculas = {(nombre) => this.filtrarPeliculas(nombre)}/>
             <button onClick={()=> this.traerMasPeliculas()}>Traer más películas</button>
+          
           <PeliculasContainer Pelicula= {this.state.Upcoming}>
 
           </PeliculasContainer>

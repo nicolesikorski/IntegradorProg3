@@ -1,7 +1,7 @@
 import { Component } from "react";
 import './styles.css'
 
-class Form extends Component{
+class FormFiltro extends Component{
     constructor (props){ 
         super(props)
         this.state={
@@ -32,7 +32,7 @@ class Form extends Component{
             <>
                 <form onSubmit={(event)=> this.evitarSubmit(event)}>
                     <input onChange={(event)=> this.guardarValor(event)} value={this.state.valor}/>
-                    <button>Buscar pelicula</button>
+                    <button>Filtrar peliculas</button>
                 </form>
             </>
         )
@@ -40,4 +40,4 @@ class Form extends Component{
 
 } 
 
-export default Form 
+export default FormFiltro 

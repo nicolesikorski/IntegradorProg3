@@ -11,7 +11,7 @@ import Footer from "./components/Footer/Footer";
 function App() {
   return(
     <>
-    <Header> </Header>
+    <Header/>
 <main>
     <Switch>
     <Route path={'/'} exact={true} component={Home} />
@@ -19,9 +19,10 @@ function App() {
     <Route path={'/Upcoming'} exact={true} component={TodasUpcoming} />
     <Route path={'/detalle/pelicula/:id'} component={DetallePelicula} />
     <Route path={'/favoritos'} component={Favoritos} />
+    <Route component={NotFound}/>
     </Switch>
     </main>
-    <Footer></Footer>
+    <Footer/>
     
      
     </>
