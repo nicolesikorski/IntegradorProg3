@@ -81,7 +81,7 @@ render(){
 
 <article>
 <h2>Peliculas mas populares</h2>
-<Link to="/TodasPeliculas">
+<Link to="/Populares">
   <h2 >Ver todas</h2>
   </Link>
 
@@ -92,6 +92,9 @@ render(){
 
 
 <h2>Peliculas en cartel</h2>
+<Link to="/Upcoming">
+  <h2 >Ver todas</h2>
+  </Link>
 
 
 <PeliculasContainer Pelicula= {this.state.Upcoming}>
