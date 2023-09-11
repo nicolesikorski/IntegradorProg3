@@ -26,23 +26,31 @@ class FichaPelicula extends Component{
     
     render(){
         return(
-        <div className="pelicula-principal ">
+
+         
+          <article >
+
+
+
+<div>
               
                 
          
-              <h4 className="titulo">{this.props.title}</h4>
-              <img className="" src = { `https://image.tmdb.org/t/p/w342/${this.props.poster_path} `} alt="" />
+              <h2 >{this.props.title}</h2 >
+
+              <img src = { `https://image.tmdb.org/t/p/w342/${this.props.poster_path} `} alt="" />
+
               <Link to={`/detalle/pelicula/${this.props.id}`}>
-              <h2 >Ir al detalle</h2>
+              <h4 >Ir al detalle</h4>
               </Link> 
 
             {this.state.boton !== false?
             <section>
-            <button className="boton-ver" onClick={()=>this.verMenos()} >Ver menos</button>
+            <button onClick={()=>this.verMenos()} >Ver menos</button>
                 <p> Descripcion: {this.props.overview}</p>
             </section>
             : 
-            <button className="boton-ver" onClick= {()=> this.verMas()}> Ver mas</button>
+            <button  onClick= {()=> this.verMas()}> Ver mas</button>
                      }
               
 
@@ -59,6 +67,12 @@ class FichaPelicula extends Component{
               
             }
           </div>
+
+
+
+          </article>
+       
+        
         )
     }
 }

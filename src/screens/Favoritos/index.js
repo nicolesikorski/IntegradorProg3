@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PeliculasContainer from '../../components/PeliculasContainer/PeliculasContainer'
+import {options} from "../../utils/constants"
 
 export default class index extends Component {
   constructor(props){
@@ -16,7 +17,7 @@ export default class index extends Component {
       let favsParseados = JSON.parse(storageFavs)
       Promise.all(
         favsParseados.map( id => 
-            fetch('https://api.themoviedb.org/3/movie/' + id)
+            fetch('https://api.themoviedb.org/3/movie/' + id, options)
             .then( resp => resp.json())
           )
       )
@@ -33,7 +34,7 @@ export default class index extends Component {
   }
 
   render() {
-    
+    console.log(this.state.favoritos)
     return (
 
       

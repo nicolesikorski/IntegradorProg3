@@ -11,6 +11,7 @@ import Footer from "./components/Footer/Footer";
 function App() {
   return(
     <>
+    <body className=""> 
     <Header/>
 <main>
     <Switch>
@@ -24,8 +25,9 @@ function App() {
     </main>
     <Footer/>
     
-     
+    </body>
     </>
+    
   )
 }
 

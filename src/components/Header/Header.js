@@ -22,20 +22,41 @@ const navegacion = [
 ]
 export default function Header() {
   return (
-    <nav>
-        <ul className=''>
-            {
-                navegacion.map((elm) => <li>
+      <header> 
+      
+
+          <div>
+              <h1>POCHOCLOS </h1>
+          </div>
+
+          <div>
+
+              <nav>
+                  <div > 
+
+                  <ul className="main-nav" >
+                  {
+                navegacion.map((elm) => 
+                <li>
                     <Link to = {elm.ruta}>
                         {elm.nombre}
                     </Link>
-                    </li>)
-            }
-        </ul>
-        <ul>
-            {/* <img className='' src= ''alt="" /> */}
-        </ul>
-        
-    </nav>
+                
+                </li>)
+                
+                }
+
+                  </ul>
+
+                  </div>
+
+              </nav>
+
+
+          </div>
+
+    
+    
+    </header>
   )
 }

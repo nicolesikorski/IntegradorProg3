@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import {options} from "../../utils/constants"
-import './styles.css'
 import PeliculasContainer from '../../components/PeliculasContainer/PeliculasContainer'
 import { Link } from 'react-router-dom'
 import FormBuscador from '../../components/FormBuscador/FormBuscador'
@@ -59,7 +58,6 @@ class index extends Component {
             .catch(error => console.log(error))
 }
 
-
 render(){
   return(
 
@@ -68,27 +66,30 @@ render(){
 <FormBuscador buscadorPeliculas = {(nombre) => this.buscadorPeliculas(nombre)}/>
 
 {this.state.resultadoBusqueda.length !== 0 ?
-
+  <main>
 <article>
-                <h2 className=""> Resultado de busqueda </h2>
-                <section className="">
+                <h2> Resultado de busqueda </h2>
+               
                 <PeliculasContainer Pelicula= {this.state.resultadoBusqueda}>
 
               </PeliculasContainer>
-                </section> 
+                
               
-              </article> :
+              </article> </main> :
 
-<article>
+<main>
+<article >
 <h2>Peliculas mas populares</h2>
-<Link to="/Populares">
+<Link  to="/Populares">
   <h2 >Ver todas</h2>
   </Link>
+
 
 
 <PeliculasContainer Pelicula= {this.state.Populares}>
 
 </PeliculasContainer>
+
 
 
 <h2>Peliculas en cartel</h2>
@@ -100,7 +101,9 @@ render(){
 <PeliculasContainer Pelicula= {this.state.Upcoming}>
 
 </PeliculasContainer>
+
 </article>
+</main>
 
 }
 
@@ -112,10 +115,5 @@ render(){
   )
 }
 
-
-
-
 }
- 
-
-export default index
+ export default index
