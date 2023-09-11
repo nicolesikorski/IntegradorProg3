@@ -6,6 +6,7 @@ import TodasUpcoming from "./screens/TodasUpcoming";
 import TodasPopulares from "./screens/TodasPopulares";
 import DetallePelicula  from "./screens/DetallePelicula/index";
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return(
@@ -20,7 +21,7 @@ function App() {
     <Route path={'/favoritos'} component={Favoritos} />
     </Switch>
     </main>
-    
+    <Footer></Footer>
     
      
     </>
