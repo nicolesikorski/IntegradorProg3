@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {options} from "../../utils/constants"
 import { Link } from 'react-router-dom'
+import './styles.css'
 
 class DetallePelicula extends Component {
 
@@ -74,33 +75,53 @@ class DetallePelicula extends Component {
         return(
 
             <> 
+
         {
           this.state.Detalle !== null? 
+          
+
+
+          <article className="card" >
+
+
+
+
           <div> 
-           <h4 className="titulo">{this.state.Detalle.title}</h4>
-              <img className="" src = { `https://image.tmdb.org/t/p/w342/${this.state.Detalle.poster_path} `} alt="" />
-              <p className=""> Sinopsis: {this.state.Detalle.overview}</p>
-              <p className=""> Fecha de estreno: {this.state.Detalle.release_date}</p>
-              <p className=""> Duracion: {this.state.Detalle.runtime}</p>
-              <p className=""> Rating: {this.state.Detalle.vote_average}</p>
-              <p className=""> Genero : {this.state.Detalle.genres[0].name }</p> 
+            
+           <h1 className="movie-title"> {this.state.Detalle.title}</h1>
+           <div className='divImagen'> 
+              <img className="image" src = { `https://image.tmdb.org/t/p/w342/${this.state.Detalle.poster_path} `} alt="" />
+              </div>
+              <h3 className="movie-description"> Sinopsis: {this.state.Detalle.overview}</h3>
+              <h3 className=""> Fecha de estreno: {this.state.Detalle.release_date}</h3>
+              <h3 className=""> Duracion: {this.state.Detalle.runtime}</h3>
+              <h3 className=""> Rating: {this.state.Detalle.vote_average}</h3>
+              <h3 className=""> Genero : {this.state.Detalle.genres[0].name }</h3> 
              
               
               {
               this.state.esFavorito ?
+              <div className="divBoton">
               <button onClick={()=> this.sacarDeFavoritos(this.state.Detalle.id)}>
                 Sacar de favoritos
               </button>  
+              </div>
               :
+              <div className="divBoton">
               <button onClick={()=> this.agregarAFavoritos(this.state.Detalle.id)}>
                 Agregar a favoritos
               </button>
+              </div>
             }
 
               
               
               
-          </div>
+          </div>  
+
+
+
+</article>
           :
           <h1>Cargando Pelicula...</h1>
         }

@@ -1,0 +1,26 @@
+/*GENERAL*/
+
+/* Hacer que quede en el medio */
+/* .footersytle{
+   background-color: #1b1b1b;
+   height: 60px;
+   width: auto;
+} */
+
+a {
+    text-decoration: none;
+}
+
+
+.tamanofuenteh1{
+    font-size: 60px;
+    color: #cccccc;
+    text-align: center;
+}
+
+h2{
+    font-size: 30px;
+    color: #cccccc;
+    text-align: center;
+
+}

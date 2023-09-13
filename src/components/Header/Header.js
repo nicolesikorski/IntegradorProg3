@@ -32,13 +32,13 @@ export default function Header() {
           <div>
 
               <nav>
-                  <div > 
+                  <div className='header'> 
 
-                  <ul className="main-nav" >
+                  <ul className='nav-ul'>
                   {
                 navegacion.map((elm) => 
-                <li>
-                    <Link to = {elm.ruta}>
+                <li className='nav-li'>
+                    <Link to = {elm.ruta} className='nav-link'>
                         {elm.nombre}
                     </Link>
                 

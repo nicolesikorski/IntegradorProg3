@@ -3,6 +3,7 @@ import {options} from "../../utils/constants"
 import PeliculasContainer from '../../components/PeliculasContainer/PeliculasContainer'
 import { Link } from 'react-router-dom'
 import FormBuscador from '../../components/FormBuscador/FormBuscador'
+import './styles.css'
 
 class index extends Component {
 
@@ -62,6 +63,7 @@ render(){
   return(
 
     <div>
+  
 
 <FormBuscador buscadorPeliculas = {(nombre) => this.buscadorPeliculas(nombre)}/>
 

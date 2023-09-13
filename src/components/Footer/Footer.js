@@ -3,15 +3,7 @@ function Footer(){
     return(
     <footer>
         <div> 
-        <ul> 
-        
-        <li>Francisca Romero Saha</li>
-        <li>Nicole Sikorski</li>
-        <li>Pilar Medico</li>
-        
-        
-
-        </ul>
+        <p>Francisca Romero - Pilar Medico - Nicole Sikorski</p>
         </div>
     
     </footer>

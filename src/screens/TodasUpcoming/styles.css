@@ -1,21 +1,8 @@
-/* styles.css */
-.header {
-    text-align: center;
-    background-color: #333;
-    padding: 10px 0;
-}
-  
-.nav-ul {
-    list-style: none;
-    padding: 0;
+.divForm {
     display: flex;
     justify-content: center;
 }
-  
-.nav-li {
-    margin: 0 10px;
-}
-  
+
 .nav-link {
     text-decoration: none;
     padding: 10px 20px;
@@ -30,10 +17,3 @@
     background-color: #ccc;
     color: #fff;
 }
-
-h1 {
-    font-size: 60px;
-    color: #ccc;
-    text-align: center;
-}
-  

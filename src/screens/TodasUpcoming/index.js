@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {options} from "../../utils/constants"
 import PeliculasContainer from '../../components/PeliculasContainer/PeliculasContainer'
 import FormFiltro from '../../components/FormFiltro/FormFiltro'
+import './styles.css'
 
 class TodasUpcoming extends Component {
 
@@ -58,8 +59,12 @@ filtrarPeliculas(nombre){
           <section> 
           <h2>Todas las peliculas en cartel</h2>
           
+          <div className='divForm'> 
+
           <FormFiltro filtrarPeliculas = {(nombre) => this.filtrarPeliculas(nombre)}/>
-            <button onClick={()=> this.traerMasPeliculas()}>Traer más películas</button>
+            <button  className='nav-link' onClick={()=> this.traerMasPeliculas()}>Traer más películas</button>
+
+            </div>
           
           <PeliculasContainer Pelicula= {this.state.Upcoming}>
 

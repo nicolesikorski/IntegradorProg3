@@ -28,29 +28,30 @@ class FichaPelicula extends Component{
         return(
 
          
-          <article >
+          <article className="movie-card" >
 
 
 
-<div>
+<div >
               
                 
          
+             
+
+              <img className="movie-image" src = { `https://image.tmdb.org/t/p/w342/${this.props.poster_path} `} alt="" />
               <h2 >{this.props.title}</h2 >
-
-              <img src = { `https://image.tmdb.org/t/p/w342/${this.props.poster_path} `} alt="" />
-
               <Link to={`/detalle/pelicula/${this.props.id}`}>
               <h4 >Ir al detalle</h4>
               </Link> 
 
             {this.state.boton !== false?
-            <section>
+            <div className="divBoton">
             <button onClick={()=>this.verMenos()} >Ver menos</button>
                 <p> Descripcion: {this.props.overview}</p>
-            </section>
+            </div>
             : 
-            <button  onClick= {()=> this.verMas()}> Ver mas</button>
+            <div className="divBoton">
+            <button  onClick= {()=> this.verMas()}> Ver mas</button></div>
                      }
               
 
