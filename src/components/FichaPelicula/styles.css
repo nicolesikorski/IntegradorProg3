@@ -1,6 +1,6 @@
 .movie-card {
     width: 250px;
- margin-bottom: 100px;
+    margin-bottom: 100px;
     background-color: #333;
     border-radius: 5px;
     overflow: hidden;
@@ -23,3 +23,5 @@ h4 {
     color: #ccc;
     text-align: center;
 }
+
+

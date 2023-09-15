@@ -86,7 +86,7 @@ class DetallePelicula extends Component {
 
 
 
-          <div> 
+          <article className='div'> 
             
            <h1 className="movie-title"> {this.state.Detalle.title}</h1>
            <div className='divImagen'> 
@@ -113,11 +113,7 @@ class DetallePelicula extends Component {
               </button>
               </div>
             }
-
-              
-              
-              
-          </div>  
+          </article>  
 
 
 

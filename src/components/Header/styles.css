@@ -9,7 +9,8 @@
     list-style: none;
     padding: 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
   
 .nav-li {
@@ -36,4 +37,17 @@ h1 {
     color: #ccc;
     text-align: center;
 }
-  
+
+@media (max-width: 460px) {
+    .nav-li{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }} 
+
+    
+
+
+
+    
